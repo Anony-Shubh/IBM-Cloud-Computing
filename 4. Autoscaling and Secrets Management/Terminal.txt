@@ -1,0 +1,453 @@
+                   1.25.1                                                                        73e957703f12   sn-labsassets       1 year ago       71 MB    -
+us.icr.io/sn-labsassets/nginx                                            latest                                                                        73e957703f12   sn-labsassets       1 year ago       71 MB    -
+us.icr.io/sn-labsassets/nginx                                            sha256-85eabf2757cb5b5b84248d7feb019079501dfd8691fc79b8b1d0ff1591a6270b.sig   9a38ca67e16d   sn-labsassets       -                308 B    -
+us.icr.io/sn-labsassets/nginx                                            signed                                                                        85eabf2757cb   sn-labsassets       11 months ago    67 MB    -
+us.icr.io/sn-labsassets/nginx                                            unsigned                                                                      73e957703f12   sn-labsassets       1 year ago       71 MB    -
+us.icr.io/sn-labsassets/noun-phrases-watson-nlp-runtime                  latest                                                                        c696f6af9797   sn-labsassets       2 years ago      2.7 GB   -
+us.icr.io/sn-labsassets/openshift-console-auth-proxy                     0.0.1                                                                         f3cd15bd3584   sn-labsassets       4 years ago      355 MB   -
+us.icr.io/sn-labsassets/pgadmin-theia                                    latest                                                                        0adf67ad81a3   sn-labsassets       3 years ago      101 MB   -
+us.icr.io/sn-labsassets/phpmyadmin                                       latest                                                                        b66c30786353   sn-labsassets       3 years ago      163 MB   -
+us.icr.io/sn-labsassets/relations-sire-watson-nlp-runtime                latest                                                                        65c2e74995d5   sn-labsassets       2 years ago      2.8 GB   -
+us.icr.io/sn-labsassets/relations-transformer-watson-nlp-runtime         latest                                                                        18ffd6c35726   sn-labsassets       2 years ago      3.6 GB   -
+us.icr.io/sn-labsassets/relations-watson-nlp-runtime                     latest                                                                        3547dcc15c43   sn-labsassets       2 years ago      3.6 GB   -
+us.icr.io/sn-labsassets/sentiment-bert-watson-nlp-runtime                latest                                                                        b7f6814ca014   sn-labsassets       2 years ago      3.7 GB   -
+us.icr.io/sn-labsassets/sentiment-cnn-watson-nlp-runtime                 latest                                                                        d89e9fbfccf1   sn-labsassets       2 years ago      2.8 GB   -
+us.icr.io/sn-labsassets/sentiment-watson-nlp-runtime                     latest                                                                        a0b76bd2dad7   sn-labsassets       2 years ago      4.2 GB   -
+us.icr.io/sn-labsassets/speech-standalone                                latest                                                                        635f94bc2c1c   sn-labsassets       2 years ago      3.7 GB   -
+us.icr.io/sn-labsassets/syntax-watson-nlp-runtime                        latest                                                                        332c147eb437   sn-labsassets       2 years ago      2.7 GB   -
+us.icr.io/sn-labsassets/tts-standalone                                   latest                                                                        56ce85280714   sn-labsassets       2 years ago      3.7 GB   -
+us.icr.io/sn-labsassets/tts-standalone-full                              latest                                                                        0285cd4b20bd   sn-labsassets       2 years ago      5.4 GB   -
+us.icr.io/sn-labsassets/watson-nlp-runtime                               1.0.18                                                                        0cbcbd5bde0e   sn-labsassets       2 years ago      2.7 GB   -
+us.icr.io/sn-labsassets/watson-nlp_syntax_izumo_lang_en_stock            1.0.7                                                                         362ba4b6ef00   sn-labsassets       2 years ago      14 MB    -
+us.icr.io/sn-labsassets/watson-nlp_syntax_izumo_lang_fr_stock            1.0.7                                                                         2d47c44882c7   sn-labsassets       2 years ago      14 MB    -
+
+OK
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ echo $MY_NAMESAPCE
+
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ echo $MY_NAMESPACE
+sn-labs-u21052106
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f deployment.yaml
+deployment.apps/myapp created
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl get pods
+NAME                     READY   STATUS    RESTARTS   AGE
+myapp-64bcc78876-h8z62   1/1     Running   0          6s
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$[00m$ kubectl port-forward deployment.apps/myapp 3000:3000 
+Forwarding from 127.0.0.1:3000 -> 3000
+Forwarding from [::1]:3000 -> 3000
+theia@theiadocker-u21052106:/home/project$ kubectl version
+WARNING: This version information is deprecated and will be replaced with the output from kubectl version --short.  Use --output=yaml|json to get the full version.
+Client Version: version.Info{Major:"1", Minor:"27", GitVersion:"v1.27.6", GitCommit:"741c8db18a52787d734cbe4795f0b4ad860906d6", GitTreeState:"clean", BuildDate:"2023-09-13T09:21:34Z", GoVersion:"go1.20.8", Compiler:"gc", Platform:"linux/amd64"}
+Kustomize Version: v5.0.1
+Server Version: version.Info{Major:"1", Minor:"28", GitVersion:"v1.28.13+IKS", GitCommit:"6a8ad23c9d04d8bcca724fd730dd0c28287c8b38", GitTreeState:"clean", BuildDate:"2024-08-15T14:53:42Z", GoVersion:"go1.22.5", Compiler:"gc", Platform:"linux/amd64"}
+theia@theiadocker-u21052106:/home/project$ git clone https://github.com/ibm-developer-skills-network/k8-scaling-and-secrets-mgmt.git
+Cloning into 'k8-scaling-and-secrets-mgmt'...
+remote: Enumerating objects: 18, done.
+remote: Counting objects: 100% (18/18), done.
+remote: Compressing objects: 100% (16/16), done.
+remote: Total 18 (delta 1), reused 3 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (18/18), 9.15 KiB | 9.15 MiB/s, done.
+Resolving deltas: 100% (1/1), done.
+theia@theiadocker-u21052106:/home/project$ cd k8-scaling-and-secrets-mgmt
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ export MY_NAMESPACE=sn-labs-$USERNAME 
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ docker build . -t us.icr.io/$MY_NAMESPACE/myapp:v1
+[+] Building 54.0s (11/11) FINISHED    docker:default
+ => [internal] load build definition from Docke  0.0s
+ => => transferring dockerfile: 464B             0.0s
+ => [internal] load .dockerignore                0.0s
+ => => transferring context: 2B                  0.0s
+ => [internal] load metadata for docker.io/libr  0.3s
+ => [auth] library/node:pull token for registry  0.0s
+ => [1/5] FROM docker.io/library/node:14@sha25  49.0s
+ => => resolve docker.io/library/node:14@sha256  0.0s
+ => => sha256:a158d3b9b4e3fa813fa6c 776B / 776B  0.0s
+ => => sha256:2cafa3fbb0b6529ee 2.21kB / 2.21kB  0.0s
+ => => sha256:1d12470fa662a2a5c 7.51kB / 7.51kB  0.0s
+ => => sha256:b253aeafeaa7e0671 7.86MB / 7.86MB  1.3s
+ => => sha256:3d2201bd995cccf 10.00MB / 10.00MB  1.3s
+ => => sha256:2ff1d7c41c74a25 50.45MB / 50.45MB  4.8s
+ => => sha256:1de76e268b103d 51.88MB / 51.88MB  14.5s
+ => => sha256:d9a8df589451 191.85MB / 191.85MB  19.3s
+ => => sha256:6f51ee005deac0d99 4.19kB / 4.19kB  5.1s
+ => => extracting sha256:2ff1d7c41c74a25258bfa6  5.4s
+ => => sha256:5f32ed3c3f278e 35.24MB / 35.24MB  14.0s
+ => => extracting sha256:b253aeafeaa7e0671bb600  0.8s
+ => => sha256:0c8cc2f24a4dcb64 2.29MB / 2.29MB  19.3s
+ => => sha256:0d27a8e861329007574c 450B / 450B  19.3s
+ => => extracting sha256:3d2201bd995cccf12851a5  0.3s
+ => => extracting sha256:1de76e268b103d05fa8960  3.0s
+ => => extracting sha256:d9a8df5894511ce28a05e2  8.3s
+ => => extracting sha256:6f51ee005deac0d99898e4  0.0s
+ => => extracting sha256:5f32ed3c3f278edda4fc57  2.2s
+ => => extracting sha256:0c8cc2f24a4dcb64e602e0  0.1s
+ => => extracting sha256:0d27a8e861329007574c67  0.0s
+ => [internal] load build context                0.0s
+ => => transferring context: 2.05kB              0.0s
+ => [2/5] WORKDIR /app                           0.0s
+ => [3/5] COPY main.js .                         0.0s
+ => [4/5] COPY public/index.html public/index.h  0.0s
+ => [5/5] COPY public/style.css public/style.cs  0.0s
+ => exporting to image                           4.5s
+ => => exporting layers                          4.5s
+ => => writing image sha256:4d9e590febc08f84db0  0.0s
+ => => naming to us.icr.io/sn-labs-u21052106/my  0.0s
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ docker push us.icr.io/$MY_NAMESPACE/myapp:v1 
+The push refers to repository [us.icr.io/sn-labs-u21052106/myapp]
+bcd11fe1c203: Preparing 
+4515df9e6373: Preparing 
+0b5dca61987a: Preparing 
+935f13354290: Preparing 
+0d5f5a015e5d: Preparing 
+3c777d951de2: Waiting 
+f8a91dd5fc84: Pushed 
+cb81227abde5: Pushed 
+e01a454893a9: Pushed 
+c45660adde37: Pushed 
+fe0fb3ab4a0f: Pushed 
+f1186e5061f2: Pushed 
+b2dba7477754: Pushed 
+v1: digest: sha256:e416dda558e737a35b1de2b8d3f86bb947107d229edd72afa97f809ca73fc745 size: 3042
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ ibmcloud cr images
+Listing images...
+
+Repository                                                               Tag                                                                           Digest         Namespace           Created          Size     Security status
+us.icr.io/sn-labs-u21052106/hello-world                                  1                                                                             61c106855c2f   sn-labs-u21052106   44 minutes ago   28 MB    -
+us.icr.io/sn-labs-u21052106/hello-world                                  2                                                                             a188f8a05241   sn-labs-u21052106   32 minutes ago   28 MB    -
+us.icr.io/sn-labs-u21052106/hello-world                                  3                                                                             58ec0bf20ac4   sn-labs-u21052106   20 minutes ago   28 MB    -
+us.icr.io/sn-labs-u21052106/myapp                                        v1                                                                            e416dda558e7   sn-labs-u21052106   1 minute ago     350 MB   -
+us.icr.io/sn-labsassets/categories-watson-nlp-runtime                    latest                                                                        6b01b1e5527b   sn-labsassets       2 years ago      3.1 GB   -
+us.icr.io/sn-labsassets/classification-watson-nlp-runtime                latest                                                                        dbd407898549   sn-labsassets       2 years ago      4.0 GB   -
+us.icr.io/sn-labsassets/concepts-watson-nlp-runtime                      latest                                                                        1e4741f10569   sn-labsassets       2 years ago      3.2 GB   -
+us.icr.io/sn-labsassets/custom-watson-nlp-runtime                        latest                                                                        f6513e19a33d   sn-labsassets       2 years ago      6.5 GB   -
+us.icr.io/sn-labsassets/detag-watson-nlp-runtime                         latest                                                                        38916c2119fc   sn-labsassets       2 years ago      2.7 GB   -
+us.icr.io/sn-labsassets/emotion-watson-nlp-runtime                       latest                                                                        1c9de1d27318   sn-labsassets       2 years ago      4.0 GB   -
+us.icr.io/sn-labsassets/entity-mentions-bert-watson-nlp-runtime          latest                                                                        57d92957214f   sn-labsassets       2 years ago      3.8 GB   -
+us.icr.io/sn-labsassets/entity-mentions-bilstm-watson-nlp-runtime        latest                                                                        76dbd3bdb12b   sn-labsassets       2 years ago      2.9 GB   -
+us.icr.io/sn-labsassets/entity-mentions-rbr-multi-watson-nlp-runtime     latest                                                                        577399d7b4e7   sn-labsassets       2 years ago      2.7 GB   -
+us.icr.io/sn-labsassets/entity-mentions-rbr-watson-nlp-runtime           latest                                                                        506cc92ecd3f   sn-labsassets       2 years ago      2.7 GB   -
+us.icr.io/sn-labsassets/entity-mentions-sire-watson-nlp-runtime          latest                                                                        cd4e48efd3f6   sn-labsassets       2 years ago      2.8 GB   -
+us.icr.io/sn-labsassets/entity-mentions-transformer-watson-nlp-runtime   latest                                                                        0584c56563ce   sn-labsassets       2 years ago      3.8 GB   -
+us.icr.io/sn-labsassets/instructions-splitter                            latest                                                                        2af122cfe4ee   sn-labsassets       3 years ago      21 MB    -
+us.icr.io/sn-labsassets/istio-examples-bookinfo-details-v1               1.17.0                                                                        85819dbebb6d   sn-labsassets       2 years ago      62 MB    -
+us.icr.io/sn-labsassets/istio-examples-bookinfo-productpage-v1           1.17.0                                                                        4c58e1fbe731   sn-labsassets       2 years ago      68 MB    -
+us.icr.io/sn-labsassets/istio-examples-bookinfo-ratings-v1               1.17.0                                                                        f529526d2807   sn-labsassets       2 years ago      57 MB    -
+us.icr.io/sn-labsassets/istio-examples-bookinfo-reviews-v3               1.17.0                                                                        0b37c5a396f7   sn-labsassets       2 years ago      415 MB   -
+us.icr.io/sn-labsassets/keywords-watson-nlp-runtime                      latest                                                                        e2b9dc471ae0   sn-labsassets       2 years ago      2.7 GB   -
+us.icr.io/sn-labsassets/lang-detect-watson-nlp-runtime                   latest                                                                        4d3b44e72af0   sn-labsassets       2 years ago      2.7 GB   -
+us.icr.io/sn-labsassets/llmchatbot-demo                                  latest                                                                        b0c45851acbe   sn-labsassets       1 year ago       5.1 GB   -
+us.icr.io/sn-labsassets/nginx                                            1.25.1                                                                        73e957703f12   sn-labsassets       1 year ago       71 MB    -
+us.icr.io/sn-labsassets/nginx                                            latest                                                                        73e957703f12   sn-labsassets       1 year ago       71 MB    -
+us.icr.io/sn-labsassets/nginx                                            sha256-85eabf2757cb5b5b84248d7feb019079501dfd8691fc79b8b1d0ff1591a6270b.sig   9a38ca67e16d   sn-labsassets       -                308 B    -
+us.icr.io/sn-labsassets/nginx                                            signed                                                                        85eabf2757cb   sn-labsassets       11 months ago    67 MB    -
+us.icr.io/sn-labsassets/nginx                                            unsigned                                                                      73e957703f12   sn-labsassets       1 year ago       71 MB    -
+us.icr.io/sn-labsassets/noun-phrases-watson-nlp-runtime                  latest                                                                        c696f6af9797   sn-labsassets       2 years ago      2.7 GB   -
+us.icr.io/sn-labsassets/openshift-console-auth-proxy                     0.0.1                                                                         f3cd15bd3584   sn-labsassets       4 years ago      355 MB   -
+us.icr.io/sn-labsassets/pgadmin-theia                                    latest                                                                        0adf67ad81a3   sn-labsassets       3 years ago      101 MB   -
+us.icr.io/sn-labsassets/phpmyadmin                                       latest                                                                        b66c30786353   sn-labsassets       3 years ago      163 MB   -
+us.icr.io/sn-labsassets/relations-sire-watson-nlp-runtime                latest                                                                        65c2e74995d5   sn-labsassets       2 years ago      2.8 GB   -
+us.icr.io/sn-labsassets/relations-transformer-watson-nlp-runtime         latest                                                                        18ffd6c35726   sn-labsassets       2 years ago      3.6 GB   -
+us.icr.io/sn-labsassets/relations-watson-nlp-runtime                     latest                                                                        3547dcc15c43   sn-labsassets       2 years ago      3.6 GB   -
+us.icr.io/sn-labsassets/sentiment-bert-watson-nlp-runtime                latest                                                                        b7f6814ca014   sn-labsassets       2 years ago      3.7 GB   -
+us.icr.io/sn-labsassets/sentiment-cnn-watson-nlp-runtime                 latest                                                                        d89e9fbfccf1   sn-labsassets       2 years ago      2.8 GB   -
+us.icr.io/sn-labsassets/sentiment-watson-nlp-runtime                     latest                                                                        a0b76bd2dad7   sn-labsassets       2 years ago      4.2 GB   -
+us.icr.io/sn-labsassets/speech-standalone                                latest                                                                        635f94bc2c1c   sn-labsassets       2 years ago      3.7 GB   -
+us.icr.io/sn-labsassets/syntax-watson-nlp-runtime                        latest                                                                        332c147eb437   sn-labsassets       2 years ago      2.7 GB   -
+us.icr.io/sn-labsassets/tts-standalone                                   latest                                                                        56ce85280714   sn-labsassets       2 years ago      3.7 GB   -
+us.icr.io/sn-labsassets/tts-standalone-full                              latest                                                                        0285cd4b20bd   sn-labsassets       2 years ago      5.4 GB   -
+us.icr.io/sn-labsassets/watson-nlp-runtime                               1.0.18                                                                        0cbcbd5bde0e   sn-labsassets       2 years ago      2.7 GB   -
+us.icr.io/sn-labsassets/watson-nlp_syntax_izumo_lang_en_stock            1.0.7                                                                         362ba4b6ef00   sn-labsassets       2 years ago      14 MB    -
+us.icr.io/sn-labsassets/watson-nlp_syntax_izumo_lang_fr_stock            1.0.7                                                                         2d47c44882c7   sn-labsassets       2 years ago      14 MB    -
+
+OK
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ echo $MY_NAMESAPCE
+
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ echo $MY_NAMESPACE
+sn-labs-u21052106
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f deployment.yaml
+deployment.apps/myapp created
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl get pods
+NAME                     READY   STATUS    RESTARTS   AGE
+myapp-64bcc78876-h8z62   1/1     Running   0          6s
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$[00m$ kubectl port-forward deployment.apps/myapp 3000:3000 
+Forwarding from 127.0.0.1:3000 -> 3000
+Forwarding from [::1]:3000 -> 3000
+^Ctheia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl expose deployment/myapp
+service/myapp exposed
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f vpa.yaml
+verticalpodautoscaler.autoscaling.k8s.io/myvpa created
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl get vpa
+NAME    MODE   CPU   MEM         PROVIDED   AGE
+myvpa   Auto   15m   104857600   True       82s
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl get vpa
+NAME    MODE   CPU   MEM         PROVIDED   AGE
+myvpa   Auto   15m   104857600   True       89s
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f hpa.yaml
+horizontalpodautoscaler.autoscaling/myhpa created
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f hpa.yaml
+horizontalpodautoscaler.autoscaling/myhpa unchanged
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ theia@theiadocker-u21052106:/home/pro
+theia@theiadocker-u21052106:/home/project$ kubectl version
+WARNING: This version information is deprecated and will be replaced with the output from kubectl version --short.  Use --output=yaml|json to get the full version.
+Client Version: version.Info{Major:"1", Minor:"27", GitVersion:"v1.27.6", GitCommit:"741c8db18a52787d734cbe4795f0b4ad860906d6", GitTreeState:"clean", BuildDate:"2023-09-13T09:21:34Z", GoVersion:"go1.20.8", Compiler:"gc", Platform:"linux/amd64"}
+Kustomize Version: v5.0.1
+Server Version: version.Info{Major:"1", Minor:"28", GitVersion:"v1.28.13+IKS", GitCommit:"6a8ad23c9d04d8bcca724fd730dd0c28287c8b38", GitTreeState:"clean", BuildDate:"2024-08-15T14:53:42Z", GoVersion:"go1.22.5", Compiler:"gc", Platform:"linux/amd64"}
+theia@theiadocker-u21052106:/home/project$ git clone https://github.com/ibm-developer-skills-network/k8-scaling-and-secrets-mgmt.git
+Cloning into 'k8-scaling-and-secrets-mgmt'...
+remote: Enumerating objects: 18, done.
+remote: Counting objects: 100% (18/18), done.
+remote: Compressing objects: 100% (16/16), done.
+remote: Total 18 (delta 1), reused 3 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (18/18), 9.15 KiB | 9.15 MiB/s, done.
+Resolving deltas: 100% (1/1), done.
+theia@theiadocker-u21052106:/home/project$ cd k8-scaling-and-secrets-mgmt
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ export MY_NAMESPACE=sn-labs-$USERNAME 
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ docker build . -t us.icr.io/$MY_NAMESPACE/myapp:v1
+[+] Building 54.0s (11/11) FINISHED    docker:default
+ => [internal] load build definition from Docke  0.0s
+ => => transferring dockerfile: 464B             0.0s
+ => [internal] load .dockerignore                0.0s
+ => => transferring context: 2B                  0.0s
+ => [internal] load metadata for docker.io/libr  0.3s
+ => [auth] library/node:pull token for registry  0.0s
+ => [1/5] FROM docker.io/library/node:14@sha25  49.0s
+ => => resolve docker.io/library/node:14@sha256  0.0s
+ => => sha256:a158d3b9b4e3fa813fa6c 776B / 776B  0.0s
+ => => sha256:2cafa3fbb0b6529ee 2.21kB / 2.21kB  0.0s
+ => => sha256:1d12470fa662a2a5c 7.51kB / 7.51kB  0.0s
+ => => sha256:b253aeafeaa7e0671 7.86MB / 7.86MB  1.3s
+ => => sha256:3d2201bd995cccf 10.00MB / 10.00MB  1.3s
+ => => sha256:2ff1d7c41c74a25 50.45MB / 50.45MB  4.8s
+ => => sha256:1de76e268b103d 51.88MB / 51.88MB  14.5s
+ => => sha256:d9a8df589451 191.85MB / 191.85MB  19.3s
+ => => sha256:6f51ee005deac0d99 4.19kB / 4.19kB  5.1s
+ => => extracting sha256:2ff1d7c41c74a25258bfa6  5.4s
+ => => sha256:5f32ed3c3f278e 35.24MB / 35.24MB  14.0s
+ => => extracting sha256:b253aeafeaa7e0671bb600  0.8s
+ => => sha256:0c8cc2f24a4dcb64 2.29MB / 2.29MB  19.3s
+ => => sha256:0d27a8e861329007574c 450B / 450B  19.3s
+ => => extracting sha256:3d2201bd995cccf12851a5  0.3s
+ => => extracting sha256:1de76e268b103d05fa8960  3.0s
+ => => extracting sha256:d9a8df5894511ce28a05e2  8.3s
+ => => extracting sha256:6f51ee005deac0d99898e4  0.0s
+ => => extracting sha256:5f32ed3c3f278edda4fc57  2.2s
+ => => extracting sha256:0c8cc2f24a4dcb64e602e0  0.1s
+ => => extracting sha256:0d27a8e861329007574c67  0.0s
+ => [internal] load build context                0.0s
+ => => transferring context: 2.05kB              0.0s
+ => [2/5] WORKDIR /app                           0.0s
+ => [3/5] COPY main.js .                         0.0s
+ => [4/5] COPY public/index.html public/index.h  0.0s
+ => [5/5] COPY public/style.css public/style.cs  0.0s
+ => exporting to image                           4.5s
+ => => exporting layers                          4.5s
+ => => writing image sha256:4d9e590febc08f84db0  0.0s
+ => => naming to us.icr.io/sn-labs-u21052106/my  0.0s
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ docker push us.icr.io/$MY_NAMESPACE/myapp:v1 
+The push refers to repository [us.icr.io/sn-labs-u21052106/myapp]
+bcd11fe1c203: Preparing 
+4515df9e6373: Preparing 
+0b5dca61987a: Preparing 
+935f13354290: Preparing 
+0d5f5a015e5d: Preparing 
+3c777d951de2: Waiting 
+f8a91dd5fc84: Pushed 
+cb81227abde5: Pushed 
+e01a454893a9: Pushed 
+c45660adde37: Pushed 
+fe0fb3ab4a0f: Pushed 
+f1186e5061f2: Pushed 
+b2dba7477754: Pushed 
+v1: digest: sha256:e416dda558e737a35b1de2b8d3f86bb947107d229edd72afa97f809ca73fc745 size: 3042
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ ibmcloud cr images
+Listing images...
+
+Repository                                                               Tag                                                                           Digest         Namespace           Created          Size     Security status
+us.icr.io/sn-labs-u21052106/hello-world                                  1                                                                             61c106855c2f   sn-labs-u21052106   44 minutes ago   28 MB    -
+us.icr.io/sn-labs-u21052106/hello-world                                  2                                                                             a188f8a05241   sn-labs-u21052106   32 minutes ago   28 MB    -
+us.icr.io/sn-labs-u21052106/hello-world                                  3                                                                             58ec0bf20ac4   sn-labs-u21052106   20 minutes ago   28 MB    -
+us.icr.io/sn-labs-u21052106/myapp                                        v1                                                                            e416dda558e7   sn-labs-u21052106   1 minute ago     350 MB   -
+us.icr.io/sn-labsassets/categories-watson-nlp-runtime                    latest                                                                        6b01b1e5527b   sn-labsassets       2 years ago      3.1 GB   -
+us.icr.io/sn-labsassets/classification-watson-nlp-runtime                latest                                                                        dbd407898549   sn-labsassets       2 years ago      4.0 GB   -
+us.icr.io/sn-labsassets/concepts-watson-nlp-runtime                      latest                                                                        1e4741f10569   sn-labsassets       2 years ago      3.2 GB   -
+us.icr.io/sn-labsassets/custom-watson-nlp-runtime                        latest                                                                        f6513e19a33d   sn-labsassets       2 years ago      6.5 GB   -
+us.icr.io/sn-labsassets/detag-watson-nlp-runtime                         latest                                                                        38916c2119fc   sn-labsassets       2 years ago      2.7 GB   -
+us.icr.io/sn-labsassets/emotion-watson-nlp-runtime                       latest                                                                        1c9de1d27318   sn-labsassets       2 years ago      4.0 GB   -
+us.icr.io/sn-labsassets/entity-mentions-bert-watson-nlp-runtime          latest                                                                        57d92957214f   sn-labsassets       2 years ago      3.8 GB   -
+us.icr.io/sn-labsassets/entity-mentions-bilstm-watson-nlp-runtime        latest                                                                        76dbd3bdb12b   sn-labsassets       2 years ago      2.9 GB   -
+us.icr.io/sn-labsassets/entity-mentions-rbr-multi-watson-nlp-runtime     latest                                                                        577399d7b4e7   sn-labsassets       2 years ago      2.7 GB   -
+us.icr.io/sn-labsassets/entity-mentions-rbr-watson-nlp-runtime           latest                                                                        506cc92ecd3f   sn-labsassets       2 years ago      2.7 GB   -
+us.icr.io/sn-labsassets/entity-mentions-sire-watson-nlp-runtime          latest                                                                        cd4e48efd3f6   sn-labsassets       2 years ago      2.8 GB   -
+us.icr.io/sn-labsassets/entity-mentions-transformer-watson-nlp-runtime   latest                                                                        0584c56563ce   sn-labsassets       2 years ago      3.8 GB   -
+us.icr.io/sn-labsassets/instructions-splitter                            latest                                                                        2af122cfe4ee   sn-labsassets       3 years ago      21 MB    -
+us.icr.io/sn-labsassets/istio-examples-bookinfo-details-v1               1.17.0                                                                        85819dbebb6d   sn-labsassets       2 years ago      62 MB    -
+us.icr.io/sn-labsassets/istio-examples-bookinfo-productpage-v1           1.17.0                                                                        4c58e1fbe731   sn-labsassets       2 years ago      68 MB    -
+us.icr.io/sn-labsassets/istio-examples-bookinfo-ratings-v1               1.17.0                                                                        f529526d2807   sn-labsassets       2 years ago      57 MB    -
+us.icr.io/sn-labsassets/istio-examples-bookinfo-reviews-v3               1.17.0                                                                        0b37c5a396f7   sn-labsassets       2 years ago      415 MB   -
+us.icr.io/sn-labsassets/keywords-watson-nlp-runtime                      latest                                                                        e2b9dc471ae0   sn-labsassets       2 years ago      2.7 GB   -
+us.icr.io/sn-labsassets/lang-detect-watson-nlp-runtime                   latest                                                                        4d3b44e72af0   sn-labsassets       2 years ago      2.7 GB   -
+us.icr.io/sn-labsassets/llmchatbot-demo                                  latest                                                                        b0c45851acbe   sn-labsassets       1 year ago       5.1 GB   -
+us.icr.io/sn-labsassets/nginx                                            1.25.1                                                                        73e957703f12   sn-labsassets       1 year ago       71 MB    -
+us.icr.io/sn-labsassets/nginx                                            latest                                                                        73e957703f12   sn-labsassets       1 year ago       71 MB    -
+us.icr.io/sn-labsassets/nginx                                            sha256-85eabf2757cb5b5b84248d7feb019079501dfd8691fc79b8b1d0ff1591a6270b.sig   9a38ca67e16d   sn-labsassets       -                308 B    -
+us.icr.io/sn-labsassets/nginx                                            signed                                                                        85eabf2757cb   sn-labsassets       11 months ago    67 MB    -
+us.icr.io/sn-labsassets/nginx                                            unsigned                                                                      73e957703f12   sn-labsassets       1 year ago       71 MB    -
+us.icr.io/sn-labsassets/noun-phrases-watson-nlp-runtime                  latest                                                                        c696f6af9797   sn-labsassets       2 years ago      2.7 GB   -
+us.icr.io/sn-labsassets/openshift-console-auth-proxy                     0.0.1                                                                         f3cd15bd3584   sn-labsassets       4 years ago      355 MB   -
+us.icr.io/sn-labsassets/pgadmin-theia                                    latest                                                                        0adf67ad81a3   sn-labsassets       3 years ago      101 MB   -
+us.icr.io/sn-labsassets/phpmyadmin                                       latest                                                                        b66c30786353   sn-labsassets       3 years ago      163 MB   -
+us.icr.io/sn-labsassets/relations-sire-watson-nlp-runtime                latest                                                                        65c2e74995d5   sn-labsassets       2 years ago      2.8 GB   -
+us.icr.io/sn-labsassets/relations-transformer-watson-nlp-runtime         latest                                                                        18ffd6c35726   sn-labsassets       2 years ago      3.6 GB   -
+us.icr.io/sn-labsassets/relations-watson-nlp-runtime                     latest                                                                        3547dcc15c43   sn-labsassets       2 years ago      3.6 GB   -
+us.icr.io/sn-labsassets/sentiment-bert-watson-nlp-runtime                latest                                                                        b7f6814ca014   sn-labsassets       2 years ago      3.7 GB   -
+us.icr.io/sn-labsassets/sentiment-cnn-watson-nlp-runtime                 latest                                                                        d89e9fbfccf1   sn-labsassets       2 years ago      2.8 GB   -
+us.icr.io/sn-labsassets/sentiment-watson-nlp-runtime                     latest                                                                        a0b76bd2dad7   sn-labsassets       2 years ago      4.2 GB   -
+us.icr.io/sn-labsassets/speech-standalone                                latest                                                                        635f94bc2c1c   sn-labsassets       2 years ago      3.7 GB   -
+us.icr.io/sn-labsassets/syntax-watson-nlp-runtime                        latest                                                                        332c147eb437   sn-labsassets       2 years ago      2.7 GB   -
+us.icr.io/sn-labsassets/tts-standalone                                   latest                                                                        56ce85280714   sn-labsassets       2 years ago      3.7 GB   -
+us.icr.io/sn-labsassets/tts-standalone-full                              latest                                                                        0285cd4b20bd   sn-labsassets       2 years ago      5.4 GB   -
+us.icr.io/sn-labsassets/watson-nlp-runtime                               1.0.18                                                                        0cbcbd5bde0e   sn-labsassets       2 years ago      2.7 GB   -
+us.icr.io/sn-labsassets/watson-nlp_syntax_izumo_lang_en_stock            1.0.7                                                                         362ba4b6ef00   sn-labsassets       2 years ago      14 MB    -
+us.icr.io/sn-labsassets/watson-nlp_syntax_izumo_lang_fr_stock            1.0.7                                                                         2d47c44882c7   sn-labsassets       2 years ago      14 MB    -
+
+OK
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ echo $MY_NAMESAPCE
+
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ echo $MY_NAMESPACE
+sn-labs-u21052106
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f deployment.yaml
+deployment.apps/myapp created
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl get pods
+NAME                     READY   STATUS    RESTARTS   AGE
+myapp-64bcc78876-h8z62   1/1     Running   0          6s
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$[00m$ kubectl port-forward deployment.apps/myapp 3000:3000 
+Forwarding from 127.0.0.1:3000 -> 3000
+Forwarding from [::1]:3000 -> 3000
+^Ctheia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl expose deployment/myapp
+service/myapp exposed
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f vpa.yaml
+verticalpodautoscaler.autoscaling.k8s.io/myvpa created
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl get vpa
+NAME    MODE   CPU   MEM         PROVIDED   AGE
+myvpa   Auto   15m   104857600   True       82s
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl get vpa
+NAME    MODE   CPU   MEM         PROVIDED   AGE
+myvpa   Auto   15m   104857600   True       89s
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f hpa.yaml
+horizontalpodautoscaler.autoscaling/myhpa created
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f hpa.yaml
+horizontalpodautoscaler.autoscaling/myhpa unchanged
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+theia@theiadocker-u21052106:/home/project$ kubectl apply -f secret.yamll
+error: the path "secret.yaml" does not exist
+theia@theiadocker-u21052106:/home/project$ kubectl apply -f secret.yaml
+error: the path "secret.yaml" does not exist
+theia@theiadocker-u21052106:/home/project$ kubectl apply -f secret.yaml 
+error: the path "secret.yaml" does not exist
+theia@theiadocker-u21052106:/home/project$ cd k8-scaling-and-secrets-mgmt/
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f secret.yaml
+Error from server (BadRequest): error when creating "secret.yaml": Secret in version "v1" cannot be handled as a Secret: strict decoding error: unknown field "env"
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f secret.yaml
+Error from server (BadRequest): error when creating "secret.yaml": Secret in version "v1" cannot be handled as a Secret: strict decoding error: unknown field "env"
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f secret.yaml
+Error from server (BadRequest): error when creating "secret.yaml": Secret in version "v1" cannot be handled as a Secret: json: cannot unmarshal object into Go struct field Secret.data of type uint8
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f secret.yaml
+error: error parsing secret.yaml: error converting YAML to JSON: yaml: line 9: mapping values are not allowed in this context
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f secret.yaml
+secret/myapp-secret created
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f deployment.yaml
+The request is invalid: patch: Invalid value: "map[metadata:map[annotations:map[kubectl.kubernetes.io/last-applied-configuration:{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"myapp\"},\"name\":\"myapp\",\"namespace\":\"sn-labs-u21052106\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"myapp\"}},\"strategy\":{\"rollingUpdate\":{\"maxSurge\":\"25%\",\"maxUnavailable\":\"25%\"},\"type\":\"RollingUpdate\"},\"template\":{\"metadata\":{\"labels\":{\"app\":\"myapp\"}},\"spec\":{\"containers\":[{\"image\":\"us.icr.io/sn-labs-u21052106/myapp:v1\",\"imagePullPolicy\":\"Always\",\"name\":\"myapp\",\"ports\":[{\"containerPort\":3000,\"name\":\"http\"}],\"resources\":{\"limits\":{\"cpu\":\"50m\"},\"requests\":{\"cpu\":\"20m\"}}}],\"env\":[{\"name\":\"MYAPP_USERNAME\",\"valueFrom\":{\"secretKeyRef\":{\"key\":\"username\",\"name\":\"myapp-secret\"}}},{\"name\":\"MYAPP_PASSWORD\",\"valueFrom\":{\"secretKeyRef\":{\"key\":\"password\",\"name\":\"myapp-secret\"}}}]}}}}\n]] spec:map[template:map[spec:map[env:[map[name:MYAPP_USERNAME valueFrom:map[secretKeyRef:map[key:username name:myapp-secret]]] map[name:MYAPP_PASSWORD valueFrom:map[secretKeyRef:map[key:password name:myapp-secret]]]]]]]]": strict decoding error: unknown field "spec.template.spec.env"
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f deployment.yaml
+The request is invalid: patch: Invalid value: "map[metadata:map[annotations:map[kubectl.kubernetes.io/last-applied-configuration:{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"myapp\"},\"name\":\"myapp\",\"namespace\":\"sn-labs-u21052106\"},\"spec\":{\"env\":[{\"name\":\"MYAPP_USERNAME\",\"valueFrom\":{\"secretKeyRef\":{\"key\":\"username\",\"name\":\"myapp-secret\"}}},{\"name\":\"MYAPP_PASSWORD\",\"valueFrom\":{\"secretKeyRef\":{\"key\":\"password\",\"name\":\"myapp-secret\"}}}],\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"myapp\"}},\"strategy\":{\"rollingUpdate\":{\"maxSurge\":\"25%\",\"maxUnavailable\":\"25%\"},\"type\":\"RollingUpdate\"},\"template\":{\"metadata\":{\"labels\":{\"app\":\"myapp\"}},\"spec\":{\"containers\":[{\"image\":\"us.icr.io/sn-labs-u21052106/myapp:v1\",\"imagePullPolicy\":\"Always\",\"name\":\"myapp\",\"ports\":[{\"containerPort\":3000,\"name\":\"http\"}],\"resources\":{\"limits\":{\"cpu\":\"50m\"},\"requests\":{\"cpu\":\"20m\"}}}]}}}}\n]] spec:map[env:[map[name:MYAPP_USERNAME valueFrom:map[secretKeyRef:map[key:username name:myapp-secret]]] map[name:MYAPP_PASSWORD valueFrom:map[secretKeyRef:map[key:password name:myapp-secret]]]]]]": strict decoding error: unknown field "spec.env"
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+theia@theiadocker-u21052106:/home/project$ kubectl apply -f secret.yaml6:/home/project$ kubectl appl
+error: the path "secret.yaml" does not exist
+theia@theiadocker-u21052106:/home/project$ kubectl apply -f secret.yaml
+error: the path "secret.yaml" does not exist
+theia@theiadocker-u21052106:/home/project$ kubectl apply -f secret.yaml 
+error: the path "secret.yaml" does not exist
+theia@theiadocker-u21052106:/home/project$ cd k8-scaling-and-secrets-mgmt/
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f secret.yaml
+Error from server (BadRequest): error when creating "secret.yaml": Secret in version "v1" cannot be handled as a Secret: strict decoding error: unknown field "env"
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f secret.yaml
+Error from server (BadRequest): error when creating "secret.yaml": Secret in version "v1" cannot be handled as a Secret: strict decoding error: unknown field "env"
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f secret.yaml
+Error from server (BadRequest): error when creating "secret.yaml": Secret in version "v1" cannot be handled as a Secret: json: cannot unmarshal object into Go struct field Secret.data of type uint8
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f secret.yaml
+error: error parsing secret.yaml: error converting YAML to JSON: yaml: line 9: mapping values are not allowed in this context
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f secret.yaml
+secret/myapp-secret created
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f deployment.yaml
+The request is invalid: patch: Invalid value: "map[metadata:map[annotations:map[kubectl.kubernetes.io/last-applied-configuration:{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"myapp\"},\"name\":\"myapp\",\"namespace\":\"sn-labs-u21052106\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"myapp\"}},\"strategy\":{\"rollingUpdate\":{\"maxSurge\":\"25%\",\"maxUnavailable\":\"25%\"},\"type\":\"RollingUpdate\"},\"template\":{\"metadata\":{\"labels\":{\"app\":\"myapp\"}},\"spec\":{\"containers\":[{\"image\":\"us.icr.io/sn-labs-u21052106/myapp:v1\",\"imagePullPolicy\":\"Always\",\"name\":\"myapp\",\"ports\":[{\"containerPort\":3000,\"name\":\"http\"}],\"resources\":{\"limits\":{\"cpu\":\"50m\"},\"requests\":{\"cpu\":\"20m\"}}}],\"env\":[{\"name\":\"MYAPP_USERNAME\",\"valueFrom\":{\"secretKeyRef\":{\"key\":\"username\",\"name\":\"myapp-secret\"}}},{\"name\":\"MYAPP_PASSWORD\",\"valueFrom\":{\"secretKeyRef\":{\"key\":\"password\",\"name\":\"myapp-secret\"}}}]}}}}\n]] spec:map[template:map[spec:map[env:[map[name:MYAPP_USERNAME valueFrom:map[secretKeyRef:map[key:username name:myapp-secret]]] map[name:MYAPP_PASSWORD valueFrom:map[secretKeyRef:map[key:password name:myapp-secret]]]]]]]]": strict decoding error: unknown field "spec.template.spec.env"
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f deployment.yaml
+The request is invalid: patch: Invalid value: "map[metadata:map[annotations:map[kubectl.kubernetes.io/last-applied-configuration:{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"myapp\"},\"name\":\"myapp\",\"namespace\":\"sn-labs-u21052106\"},\"spec\":{\"env\":[{\"name\":\"MYAPP_USERNAME\",\"valueFrom\":{\"secretKeyRef\":{\"key\":\"username\",\"name\":\"myapp-secret\"}}},{\"name\":\"MYAPP_PASSWORD\",\"valueFrom\":{\"secretKeyRef\":{\"key\":\"password\",\"name\":\"myapp-secret\"}}}],\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"myapp\"}},\"strategy\":{\"rollingUpdate\":{\"maxSurge\":\"25%\",\"maxUnavailable\":\"25%\"},\"type\":\"RollingUpdate\"},\"template\":{\"metadata\":{\"labels\":{\"app\":\"myapp\"}},\"spec\":{\"containers\":[{\"image\":\"us.icr.io/sn-labs-u21052106/myapp:v1\",\"imagePullPolicy\":\"Always\",\"name\":\"myapp\",\"ports\":[{\"containerPort\":3000,\"name\":\"http\"}],\"resources\":{\"limits\":{\"cpu\":\"50m\"},\"requests\":{\"cpu\":\"20m\"}}}]}}}}\n]] spec:map[env:[map[name:MYAPP_USERNAME valueFrom:map[secretKeyRef:map[key:username name:myapp-secret]]] map[name:MYAPP_PASSWORD valueFrom:map[secretKeyRef:map[key:password name:myapp-secret]]]]]]": strict decoding error: unknown field "spec.env"
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f secret.yaml
+secret/myapp-secret unchanged
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f deployment.yaml
+The request is invalid: patch: Invalid value: "map[metadata:map[annotations:map[kubectl.kubernetes.io/last-applied-configuration:{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"myapp\"},\"name\":\"myapp\",\"namespace\":\"sn-labs-u21052106\"},\"spec\":{\"env\":[{\"name\":\"MYAPP_USERNAME\",\"valueFrom\":{\"secretKeyRef\":{\"key\":\"username\",\"name\":\"myapp-secret\"}}},{\"name\":\"MYAPP_PASSWORD\",\"valueFrom\":{\"secretKeyRef\":{\"key\":\"password\",\"name\":\"myapp-secret\"}}}],\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"myapp\"}},\"strategy\":{\"rollingUpdate\":{\"maxSurge\":\"25%\",\"maxUnavailable\":\"25%\"},\"type\":\"RollingUpdate\"},\"template\":{\"metadata\":{\"labels\":{\"app\":\"myapp\"}},\"spec\":{\"containers\":[{\"image\":\"us.icr.io/sn-labs-u21052106/myapp:v1\",\"imagePullPolicy\":\"Always\",\"name\":\"myapp\",\"ports\":[{\"containerPort\":3000,\"name\":\"http\"}],\"resources\":{\"limits\":{\"cpu\":\"50m\"},\"requests\":{\"cpu\":\"20m\"}}}]}}}}\n]] spec:map[env:[map[name:MYAPP_USERNAME valueFrom:map[secretKeyRef:map[key:username name:myapp-secret]]] map[name:MYAPP_PASSWORD valueFrom:map[secretKeyRef:map[key:password name:myapp-secret]]]]]]": strict decoding error: unknown field "spec.env"
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl apply -f deployment.yaml
+deployment.apps/myapp configured
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl get secret              .yaml
+NAME           TYPE                             DATA   AGE
+dh             kubernetes.io/dockerconfigjson   1      81m
+icr            kubernetes.io/dockerconfigjson   1      81m
+myapp-secret   Opaque                           2      4m35s
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ kubectl get deployment
+NAME    READY   UP-TO-DATE   AVAILABLE   AGE
+myapp   1/1     1            1           23m
+theia@theiadocker-u21052106:/home/project/k8-scaling-a
+nd-secrets-mgmt$ 
